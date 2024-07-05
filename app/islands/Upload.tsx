@@ -91,7 +91,7 @@ export default function Counter() {
             {files.map((file, index) => (
               <div
                 key={file.name}
-                class="flex items-center justify-center gap-3"
+                class="flex items-center gap-3 text-gray-800"
               >
                 <div class="h-12 aspect-video relative bg-gray-200 rounded">
                   {file.type.startsWith("image/") && (
@@ -102,8 +102,9 @@ export default function Counter() {
                     />
                   )}
                 </div>
-                <div>
-                  <p>{file.name}</p>
+                <div class="overflow-hidden">
+                  <p class="break-words text-pretty">{file.name}</p>
+
                   {state === "uploading" && (
                     <div class="w-full rounded bg-gray-200 relative">
                       <div
@@ -118,7 +119,7 @@ export default function Counter() {
 
                 {state === "done" && (
                   <a href="" target="_blank">
-                    <IconDownload class="w-4 h-4 text-gray-600" />
+                    <IconDownload class="w-4 h-4" />
                   </a>
                 )}
               </div>
